@@ -83,12 +83,12 @@ func TestCreateCompletion_3298b0c24f(t *testing.T) {
 			// if error is expected
 			if tc.errorExpected {
 				if err == nil {
-					t.Errorf("Expected error but got nil")
+					t.Fatalf("Expected error but got nil")
 				} else if !strings.Contains(err.Error(), tc.expectedError.Error()) {
-					t.Errorf("Expected error %v but got %v", tc.expectedError, err)
+					t.Fatalf("Expected error %v but got %v", tc.expectedError, err)
 				}
 			} else if err != nil {
-				t.Errorf("Expected no error but got %v", err)
+				t.Fatalf("Expected no error but got %v", err)
 			}
 		})
 	}
